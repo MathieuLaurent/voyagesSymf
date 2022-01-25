@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Voyage index{% endblock %}
+
+{% block body %}
+    <h1>Voyage index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Slogan</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Duration</th>
+                <th>Pic1</th>
+                <th>Pic2</th>
+                <th>Pic3</th>
+                <th>Pdf</th>
+                <th>DateCreation</th>
+                <th>Active</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for voyage in voyages %}
+            <tr>
+                <td>{{ voyage.id }}</td>
+                <td>{{ voyage.name }}</td>
+                <td>{{ voyage.slogan }}</td>
+                <td>{{ voyage.description }}</td>
+                <td>{{ voyage.price }}</td>
+                <td>{{ voyage.duration }}</td>
+                <td>{{ voyage.pic1 }}</td>
+                <td>{{ voyage.pic2 }}</td>
+                <td>{{ voyage.pic3 }}</td>
+                <td>{{ voyage.pdf }}</td>
+                <td>{{ voyage.dateCreation ? voyage.dateCreation|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ voyage.active ? 'Yes' : 'No' }}</td>
+                <td>
+                    <a href="{{ path('admin_voyage_show', {'id': voyage.id}) }}">show</a>
+                    <a href="{{ path('admin_voyage_edit', {'id': voyage.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="13">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('admin_voyage_new') }}">Create new</a>
+{% endblock %}
