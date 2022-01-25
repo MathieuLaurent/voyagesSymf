@@ -5,9 +5,9 @@
 {% block body %}
     <h1>Edit Voyage</h1>
 
-    {{ include('admin_voyage/_form.html.twig', {'button_label': 'Update'}) }}
+    {{ include('admin/admin_voyage/_form.html.twig', {'button_label': 'Update'}) }}
 
     <a href="{{ path('admin_voyage_index') }}">back to list</a>
 
-    {{ include('admin_voyage/_delete_form.html.twig') }}
+    {{ include('admin/admin_voyage/_delete_form.html.twig') }}
 {% endblock %}
