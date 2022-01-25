@@ -1,0 +1,65 @@
+/*==================== GOOGLE FONTS ====================*/
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+/*==================== VARIABLES CSS ====================*/
+:root {
+
+    /*========== Colors ==========*/
+
+    --hover-effect: rgba(66, 165, 188, 0.8);
+
+    /*========== Font and typography ==========*/
+
+    --body-font: 'Poppins', sans-serif;
+}
+
+/*==================== GLOBAL CSS CLASS ====================*/
+
+html { 
+
+    scroll-behavior: smooth;
+    font-family: var(--body-font);
+  }
+
+
+/*==================== HEADER CSS CLASS ====================*/
+
+.header-voyage { 
+    height: 55vh;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.3), rgba(255, 255, 255, 0.2)), url('/img/header.jpg') center center / cover no-repeat;
+}
+
+.link-header { 
+    font-variant-caps: all-small-caps;
+    position:relative;
+    opacity: 0.95;
+    
+}
+
+.link-header::before {  
+    transform: scaleX(0);
+    transform-origin: bottom right;
+  }
+  
+  .link-header:hover::before {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+  
+  .link-header::before {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    inset: 0 0 0 0;
+    background: var(--hover-effect);
+    z-index: -1;
+    transition: transform .3s ease;
+  }
+  
+/*==================== MAIN CSS CLASS ====================*/
+
+
+/*==================== FOOTER CSS CLASS ====================*/
+  
