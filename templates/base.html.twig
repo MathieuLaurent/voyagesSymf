@@ -1,19 +1,38 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
-        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
-        {% block stylesheets %}
-        {% endblock %}
+<html lang="fr">
+<head>
 
-        {% block javascripts %}
-        {% endblock %}
-    </head>
-    <body>
-        {% block body %}
-        
-        {% endblock %}
-    </body>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{{ asset('/css/styles.css') }}" rel="stylesheet"/>
+    <link href="{{ asset('/css/perso.css') }}" rel="stylesheet"/>
+    <script src="{{ asset('js/script.js') }}"></script>
+    <title>Sport Shop | {% block title %}{% endblock %}</title>
+
+</head>
+
+<body>
+    
+        {{ include('inc/navbar.html.twig') }}
+   
+    {% block navbar %}
+        {{ include('inc/header.html.twig') }}
+    {% endblock %}
+    
+    <main class="py-5">
+        <div class="container px-4 px-lg-5 my-5">
+            <div class="row gx-4 gx-lg-5 align-items-center">
+
+                {% block body %}{% endblock %}
+
+            </div>
+        </div>
+    </main>
+
+
+    {{ include('inc/footer.html.twig') }}
+
+
+</body>
 </html>
