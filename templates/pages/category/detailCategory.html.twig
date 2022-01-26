@@ -8,7 +8,9 @@
                 {% for voyageItem in categorys.voyages %}
                     <div class="col mb-5">
                         <div class="card h-100">
+                        {% if voyageItem.pic1 is not null %}
                             <img class="card-img-top" src="{{asset(voyageItem.pic1)}}" alt="..." />
+                        {% endif %}
                             <div class="card-body p-4">
                                 <div class="text-center">
                                     <h5 class="fw-bolder">{{ voyageItem.name }}</h5>

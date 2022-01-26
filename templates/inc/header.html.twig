@@ -13,7 +13,14 @@
             </ul>
     
             <form class="col-12 col-lg-auto me-lg-3">
-              <input type="search" class="form-control search" placeholder="Search..." aria-label="Search">
+              <div class="row g-2">
+                <div class="col">
+                  <input type="search" class="form-control search" placeholder="Search..." aria-label="Search">
+                </div>
+                <div class="col">
+                  <input type="submit" value="rechercher" class="btn btn-primary">
+                </div>
+              </div>
             </form>
             {% if app.user %}
             <div class="dropdown text-end">
