@@ -1,7 +1,3 @@
-/*==================== GOOGLE FONTS ====================*/
-
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
-
 /*==================== VARIABLES CSS ====================*/
 :root {
 
@@ -15,9 +11,6 @@
     --light-font: rgba(163, 172, 178,1);
     --light-bg: rgba(255, 255, 255, 0.5);
 
-    /*========== Font and typography ==========*/
-
-    --body-font: 'Poppins', sans-serif;
 }
 
 /*==================== GLOBAL CSS CLASS ====================*/
@@ -25,10 +18,8 @@
 html { 
 
     scroll-behavior: smooth;
-    font-family: var(--body-font);
-    color: var(--font-color);
-  }
 
+  }
 
 /*==================== HEADER CSS CLASS ====================*/
 
@@ -72,6 +63,7 @@ header {
     color: var(--hover-effect);
     margin: 5px;
   }
+
 
 
   
