@@ -12,7 +12,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 #[Route('admin/tag')]
-class TagController extends AbstractController
+class AdminTagController extends AbstractController
 {
     #[Route('/', name: 'admin_tag_index', methods: ['GET'])]
     public function index(TagsRepository $tagsRepository): Response
