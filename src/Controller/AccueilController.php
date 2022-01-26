@@ -14,14 +14,25 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class AccueilController extends AbstractController
 {
     #[Route('/', name: 'accueil')]
-    public function index(VoyageRepository $voyages): Response
+    public function index(VoyageRepository $voyages, Request $request): Response
     {
         $form = $this->createForm(VoyageType::class);
-        $form->handleRequest();
+        $form->handleRequest($request);
+        if($form->isSubmitted() && $form->isValid()){
+
+
+            return $this->redirectToRoute('tagSearch');
+        }
 
 
         return $this->render('pages/accueil.html.twig', [
             'voyages' => $voyages->findAll(),
         ]);
+    }
+
+    #[Route('/tagSearch', name: 'tagSearch')]
+    public function tagSearch() :Response
+    {
+        return $this->render('pages/tag/tagSearch.html.twig');
     }
 }
