@@ -1,4 +1,82 @@
 {{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
+{% for message in app.flashes('success') %}
+<div class="alert alert-success">
+    {{ message }}
+</div>
+{% endfor %}
+
+{{ form_start(form) }}
+
+<div class="input-group mb-3">
+
+    {{ form_label(form.name, 'Nom', {'label_attr': {'class': 'input-group-text'}}) }}
+    {{ form_widget(form.name, {'attr': {'class': 'form-control'}}) }}
+
+</div>
+
+<div class="input-group mb-3">
+
+    {{ form_label(form.slogan, 'Accroche', {'label_attr': {'class': 'input-group-text'}}) }}
+    {{ form_widget(form.slogan, {'attr': {'class': 'form-control'}}) }}
+    
+</div>
+
+<div class="input-group mb-3">
+
+    {{ form_label(form.description, 'Description', {'label_attr': {'class': 'input-group-text'}}) }}
+    {{ form_widget(form.description, {'attr': {'class': 'form-control'}}) }}
+    
+</div>
+
+<div class="input-group mb-3">
+
+    {{ form_label(form.price, 'Prix', {'label_attr': {'class': 'input-group-text'}}) }}
+    {{ form_widget(form.price, {'attr': {'class': 'form-control'}}) }}
+    
+</div>
+
+<div class="input-group mb-3">
+
+    {{ form_label(form.duration, 'Durée du séjour', {'label_attr': {'class': 'input-group-text'}}) }}
+    {{ form_widget(form.duration, {'attr': {'class': 'form-control'}}) }}
+    
+</div>
+
+
+<div class="input-group mb-3">
+
+    {{ form_label(form.pic1, 'Photo 1', {'label_attr': {'class': 'input-group-text'}}) }}
+    {{ form_widget(form.pic1, {'attr': {'class': 'form-control'}}) }}
+
+</div>
+
+<div class="input-group mb-3">
+
+    {{ form_label(form.pic2, 'Photo 2', {'label_attr': {'class': 'input-group-text'}}) }}
+    {{ form_widget(form.pic2, {'attr': {'class': 'form-control'}}) }}
+    
+</div>
+
+<div class="input-group mb-3">
+
+    {{ form_label(form.pic3, 'Photo 3', {'label_attr': {'class': 'input-group-text'}}) }}
+    {{ form_widget(form.pic3, {'attr': {'class': 'form-control'}}) }}
+    
+</div>
+
+<div class="input-group mb-3">
+
+    {{ form_label(form.pdf, 'Pdf', {'label_attr': {'class': 'input-group-text'}}) }}
+    {{ form_widget(form.pdf, {'attr': {'class': 'form-control'}}) }}
+
+</div>
+
+<div class="form-check form-check-inline mb-3">
+
+    {{ form_widget(form.active, {'attr': {'class': 'form-check-input'}}) }}
+    {{ form_label(form.active, 'Voyage actif', {'label_attr': {'class': 'form-label'}}) }}
+    
+</div>
+
+    <button class="btn btn-sm btn-outline-info mt-3">{{ button_label|default('Save') }}</button>
 {{ form_end(form) }}

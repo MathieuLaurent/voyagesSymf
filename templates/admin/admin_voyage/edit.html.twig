@@ -1,13 +1,51 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Edit Voyage{% endblock %}
+{% block title %}Edition du voyage{% endblock %}
 
 {% block body %}
-    <h1>Edit Voyage</h1>
+    <h2>Edition du voyage n° {{ voyage.id }}</h2>
+    <h3>{{ voyage.name }}</h3>
+    <hr>
 
-    {{ include('admin/admin_voyage/_form.html.twig', {'button_label': 'Update'}) }}
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-body">
+                        <img class="card-img-top" src="{{asset(voyage.pic1)}}" alt="..." />
+                    <h5 class="card-title text-center">{{ voyage.name }}</h5>
+                    <hr>
+                    <div class="small mb-1 text-center">{{ voyage.duration }} jours • {{ voyage.category.name }} • {{ voyage.price }}€</div>
+                    <hr>
+                    <p class="card-text"><h6>« {{ voyage.slogan }} »</h6>
+                        <p>{{ voyage.description }}</p>
+                        <div class="small mb-1 text-center"> {% for tag in voyage.tags %}
+                            #  {{ tag.name }}
+                        {% endfor %} </div>
+                        <a href="#" class="btn btn-sm btn-outline-info mt-3">Voir le détail</a>
+                    </div>
+                </div>
+                </div>
+                <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-body">
+                    <p class="card-text">{{ include('admin/admin_voyage/_form.html.twig', {'button_label': 'Update'}) }}</p>
+                    </div>
+                </div>
+                </div>
+            </div>
 
-    <a href="{{ path('admin_voyage_index') }}">back to list</a>
+                    
+                
+                </div>
+
+            </div>
+        </section>
+
+
+
+    <a href="{{ path('admin_voyage_index') }}"><button type="button" class="btn btn-success btn-sm m-2">Retour à la liste des voyages</button></a>
 
     {{ include('admin/admin_voyage/_delete_form.html.twig') }}
 {% endblock %}
