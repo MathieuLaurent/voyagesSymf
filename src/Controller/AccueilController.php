@@ -12,7 +12,7 @@ class AccueilController extends AbstractController
     #[Route('/', name: 'accueil')]
     public function index(VoyageRepository $voyages): Response
     {
-        return $this->render('pages/index.html.twig', [
+        return $this->render('pages/accueil.html.twig', [
             'voyages' => $voyages->findAll(),
         ]);
     }
