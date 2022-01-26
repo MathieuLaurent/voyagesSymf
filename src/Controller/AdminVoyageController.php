@@ -59,7 +59,7 @@ class AdminVoyageController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager->flush();
 
-            return $this->redirectToRoute('admin/admin_voyage_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('admin_voyage_index', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('admin/admin_voyage/edit.html.twig', [
@@ -76,6 +76,6 @@ class AdminVoyageController extends AbstractController
             $entityManager->flush();
         }
 
-        return $this->redirectToRoute('admin/admin_voyage_index', [], Response::HTTP_SEE_OTHER);
+        return $this->redirectToRoute('admin_voyage_index', [], Response::HTTP_SEE_OTHER);
     }
 }
