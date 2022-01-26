@@ -21,6 +21,10 @@ html {
 
   }
 
+  label { 
+    padding: 1rem;
+ }
+
 /*==================== HEADER CSS CLASS ====================*/
 
 header { 

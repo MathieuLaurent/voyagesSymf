@@ -7,6 +7,13 @@
 
 {{ form_start(form) }}
 
+<div class="form-check form-check-inline mb-3">
+
+    {{ form_widget(form.active, {'attr': {'class': 'input-group-text'}}) }}
+    {{ form_label(form.active, 'Voyage actif', {'label_attr': {'class': 'form-label'}}) }}
+    
+</div>
+
 <div class="input-group mb-3">
 
     {{ form_label(form.name, 'Nom', {'label_attr': {'class': 'input-group-text'}}) }}
@@ -71,12 +78,30 @@
 
 </div>
 
-<div class="form-check form-check-inline mb-3">
+<hr>
 
-    {{ form_widget(form.active, {'attr': {'class': 'form-check-input'}}) }}
-    {{ form_label(form.active, 'Voyage actif', {'label_attr': {'class': 'form-label'}}) }}
-    
+<div class="form-check mb-mt-3">
+
+    {{ form_label(form.category, 'Catégories', {'label_attr': {'class': 'input-group-text'}}) }}
+    {{ form_widget(form.category, {'attr': {'class': 'form-check-label'}}) }}
+
 </div>
 
-    <button class="btn btn-sm btn-outline-info mt-3">{{ button_label|default('Save') }}</button>
+<div class="form-check">
+
+    {{ form_label(form.tags, 'Tags', {'label_attr': {'class': 'input-group-text'}}) }}
+    {{ form_widget(form.tags, {'attr': {'class': 'form-check-label'}}) }}
+
+</div>
+
+<div class="form-check">
+
+    {{ form_label(form.dateCreation, 'Date de création', {'label_attr': {'class': 'input-group-text mb-3'}}) }}
+    {{ form_widget(form.dateCreation, {'attr': {'class': ''}}) }}
+
+</div>
+
+
+
+    <button class="btn btn-sm btn-outline-info mt-5">{{ button_label|default('Save') }}</button>
 {{ form_end(form) }}
