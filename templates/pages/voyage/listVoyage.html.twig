@@ -10,7 +10,7 @@
                 {% for unVoyage in voyages %}
                     <div class="col mb-5">
                         <div class="card h-100">
-                        <img src="{{ unVoyage.pic1 }}">
+                        <img src="{{ asset(unVoyage.pic1) }}">
                             <div class="card-body p-4">
                                 <div class="text-center">
                                     <h5 class="fw-bolder">{{ unVoyage.name }}</h5>

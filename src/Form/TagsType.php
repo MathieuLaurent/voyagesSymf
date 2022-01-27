@@ -6,13 +6,18 @@ use App\Entity\Tags;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\SearchType;
 
 class TagsType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('name')
+            ->add('name', SearchType::class, [
+                'attr' => [
+                'placeholder' => 'Rechercher..',
+            ]
+        ])
         ;
     }
 
