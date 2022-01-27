@@ -71,6 +71,12 @@ header {
   height: 200px;
 }
 
+.form-img-card { 
+  object-fit: cover;
+  width: 100%;
+  height: 400px;
+}
+
 
 /*==================== FOOTER CSS CLASS ====================*/
 

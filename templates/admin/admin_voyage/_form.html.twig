@@ -7,6 +7,9 @@
 
 {{ form_start(form) }}
 
+<h2>Informations principales</h2>
+<hr>
+
 <div class="form-check form-check-inline mb-3">
 
     {{ form_widget(form.active, {'attr': {'class': 'input-group-text'}}) }}
@@ -23,7 +26,7 @@
 
 <div class="input-group mb-3">
 
-    {{ form_label(form.slogan, 'Accroche', {'label_attr': {'class': 'input-group-text'}}) }}
+    {{ form_label(form.slogan, 'Slogan', {'label_attr': {'class': 'input-group-text'}}) }}
     {{ form_widget(form.slogan, {'attr': {'class': 'form-control'}}) }}
     
 </div>
@@ -44,7 +47,7 @@
 
 <div class="input-group mb-3">
 
-    {{ form_label(form.duration, 'Durée du séjour', {'label_attr': {'class': 'input-group-text'}}) }}
+    {{ form_label(form.duration, 'Durée en jours', {'label_attr': {'class': 'input-group-text'}}) }}
     {{ form_widget(form.duration, {'attr': {'class': 'form-control'}}) }}
     
 </div>
@@ -52,21 +55,21 @@
 
 <div class="input-group mb-3">
 
-    {{ form_label(form.pic1, 'Photo 1', {'label_attr': {'class': 'input-group-text'}}) }}
+    {{ form_label(form.pic1, 'Pic n°1', {'label_attr': {'class': 'input-group-text'}}) }}
     {{ form_widget(form.pic1, {'attr': {'class': 'form-control'}}) }}
 
 </div>
 
 <div class="input-group mb-3">
 
-    {{ form_label(form.pic2, 'Photo 2', {'label_attr': {'class': 'input-group-text'}}) }}
+    {{ form_label(form.pic2, 'Pic n°2', {'label_attr': {'class': 'input-group-text'}}) }}
     {{ form_widget(form.pic2, {'attr': {'class': 'form-control'}}) }}
     
 </div>
 
 <div class="input-group mb-3">
 
-    {{ form_label(form.pic3, 'Photo 3', {'label_attr': {'class': 'input-group-text'}}) }}
+    {{ form_label(form.pic3, 'Pic n°3', {'label_attr': {'class': 'input-group-text'}}) }}
     {{ form_widget(form.pic3, {'attr': {'class': 'form-control'}}) }}
     
 </div>
@@ -78,6 +81,7 @@
 
 </div>
 
+<h2>Informations complémentaires</h2>
 <hr>
 
 <div class="form-check mb-mt-3">
@@ -103,5 +107,5 @@
 
 
 
-    <button class="btn btn-sm btn-outline-info mt-5">{{ button_label|default('Save') }}</button>
+    <button class="btn btn-sm btn-outline-success mt-5 mb-3">{{ button_label|default('Envoyer') }}</button>
 {{ form_end(form) }}
