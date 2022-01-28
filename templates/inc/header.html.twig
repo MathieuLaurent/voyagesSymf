@@ -7,9 +7,9 @@
 
     
             <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-              <li><a href="{{path('accueil')}}" class="nav-link px-4 fs-6 link-light fw-normal text-uppercase link-header">Accueil</a></li>
-              <li><a href="#" class="nav-link px-4 fs-6 link-light fw-normal text-uppercase link-header">Voyages</a></li>
-              <li><a href="{{path('category')}}" class="nav-link px-4 fs-6 link-light fw-normal text-uppercase link-header">Catégories</a></li>
+              <li><a href="{{path('accueil')}}" class="nav-link px-4 fs-6 link-light fw-bold link-header">Accueil</a></li>
+              <li><a href="#" class="nav-link px-4 fs-6 link-light fw-bold link-header">Voyages</a></li>
+              <li><a href="{{path('category')}}" class="nav-link px-4 fs-6 link-light fw-bold link-header">Catégories</a></li>
             </ul>
     
               {#{form_start(formTag)}}
@@ -39,8 +39,8 @@
             </div>
               {% else %}
               <ul class="nav col-12 col-lg-auto mb-2 justify-content-center mb-md-0">
-                <li><a class="nav-link px-4 fs-6 link-light fw-normal text-uppercase link-header" href="{{path('app_login')}}">Connexion</a></li>
-                <li><a class="nav-link px-4 fs-6 link-light fw-normal text-uppercase link-header" href="{{path('app_register')}}">Inscription</a></li>
+                <li><a class="nav-link px-4 fs-6 link-light fw-bold link-header" href="{{path('app_login')}}">Connexion</a></li>
+                <li><a class="nav-link px-4 fs-6 link-light fw-bold link-header" href="{{path('app_register')}}">Inscription</a></li>
               </ul>
               {% endif %}
           </div>
@@ -49,8 +49,8 @@
 
         <div class="container px-5 py-lg-5 mb-5 m-auto">
           <div class="text-center text-white">
-              <h1 class="display-5 fw-bolder pt-4">Voyage Voyage</h1>
-              <p class="lead text-white m-auto fw-normal fst-italic text-lowercase mb-5">Pour aller plus loin que loin</p>
+              <h1 class="display-5 fw-bolder pt-4 titre">Voyage Voyage</h1>
+              <p class="lead text-white m-auto fw-normal mb-5">Pour aller plus loin que loin</p>
           </div>
 
       </header>
