@@ -1,17 +1,18 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Category index{% endblock %}
+{% block title %}Liste des catégories{% endblock %}
 
 {% block body %}
-    <h1>Category index</h1>
+    <h1>Liste des catégories</h1>
+    <hr>
 
-    <table class="table">
+    <table class="table table-light table-striped table-hover">
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Name</th>
+                <th>Nom</th>
                 <th>Description</th>
-                <th>actions</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -21,8 +22,10 @@
                 <td>{{ category.name }}</td>
                 <td>{{ category.description }}</td>
                 <td>
-                    <a href="{{ path('admin_category_show', {'id': category.id}) }}">show</a>
-                    <a href="{{ path('admin_category_edit', {'id': category.id}) }}">edit</a>
+                    <div class="text-center">
+                    <a href="{{ path('admin_category_show', {'id': category.id}) }}"><button type="button" class="btn btn-outline-info btn-sm m-2">Voir</button></a>
+                    <a href="{{ path('admin_category_edit', {'id': category.id}) }}"><button type="button" class="btn btn-outline-success btn-sm m-2">Editer</button></a>
+                    </div>
                 </td>
             </tr>
         {% else %}
@@ -33,5 +36,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('admin_category_new') }}">Create new</a>
+    <a href="{{ path('admin_category_new') }}"><button type="button" class="btn btn-success btn-sm m-2">Créer une nouvelle catégorie</button></a>
 {% endblock %}

@@ -2,29 +2,33 @@
 
 {% block body %}
 
-    <table class="table table-striped table-hover ">
-        <thead>
-            <th>Nom</th>
-            <th>Action</th>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Voyages</td>
-                <td><a href="{{path('admin_voyage_index')}}" class="btn btn-info"> Voir détail</a></td>
-            </tr>
-            <tr>
-                <td>Categories</td>
-                <td><a href="{{path('admin_category_index')}}" class="btn btn-info"> Voir détail</a></td>
-            </tr>
-            <tr>
-                <td>Tags</td>
-                <td><a href="{{path('admin_tag_index')}}" class="btn btn-info"> Voir détail</a></td>
-            </tr>
-            <tr>
-                <td>Utilisateurs</td>
-                <td><a href="" class="btn btn-info"> Voir détail</a></td>
-            </tr>
-        </tbody>
-    </table>
+
+            <div class="table-responsive">
+                    <table class="table align-middle table-hover">
+                        <thead>
+                            <th>Nom</th>
+                            <th>Action</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Voyages</td>
+                                <td><a href="{{path('admin_voyage_index')}}" class="btn btn-outline-info btn-sm m-2"> Voir détail</a></td>
+                            </tr>
+                            <tr>
+                                <td>Categories</td>
+                                <td><a href="{{path('admin_category_index')}}" class="btn btn-outline-info btn-sm m-2"> Voir détail</a></td>
+                            </tr>
+                            <tr>
+                                <td>Tags</td>
+                                <td><a href="{{path('admin_tag_index')}}" class="btn btn-outline-info btn-sm m-2"> Voir détail</a></td>
+                            </tr>
+                            <tr>
+                                <td>Utilisateurs</td>
+                                <td><a href="" class="btn btn-outline-info btn-sm m-2"> Voir détail</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+            </div>
+
 
 {% endblock %}

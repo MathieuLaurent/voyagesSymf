@@ -1,19 +1,45 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Register{% endblock %}
+{% block title %}S'enregistrer{% endblock %}
 
 {% block body %}
-    <h1>Register</h1>
+    <h1>S'enregistrer</h1>
+    <hr>
 
     {{ form_start(registrationForm) }}
-        {{ form_row(registrationForm.email) }}
-        {{ form_row(registrationForm.name) }}
-        {{ form_row(registrationForm.firstname) }}
-        {{ form_row(registrationForm.plainPassword, {
-            label: 'Password'
-        }) }}
-        {{ form_row(registrationForm.agreeTerms) }}
 
-        <button type="submit" class="btn">Register</button>
+        <div class="input-group mb-3">
+            <span class="input-group-text">Nom et Prénom</span>
+            {{ form_widget(registrationForm.name, {'attr': {'class': 'form-control'}}) }}
+            {{ form_widget(registrationForm.firstname, {'attr': {'class': 'form-control'}}) }}
+        </div>
+
+        <div class="input-group mb-3">
+
+            {{ form_label(registrationForm.email, 'E-Mail', {'label_attr': {'class': 'input-group-text'}}) }}
+            {{ form_widget(registrationForm.email, {'attr': {'class': 'form-control'}}) }}
+    
+        </div>
+
+        <div class="input-group mb-3">
+        
+            {{ form_label(registrationForm.plainPassword, 'Mot de passe', {'label_attr': {'class': 'input-group-text'}}) }}
+            {{ form_widget(registrationForm.plainPassword, {'attr': {'class': 'form-control'}}) }}
+    
+        </div>
+
+        <div class="form-check form-check-inline mb-3">
+
+            {{ form_widget(registrationForm.agreeTerms, {'attr': {'class': 'form-check-input'}}) }}
+            {{ form_label(registrationForm.agreeTerms, 'Accepter les conditions d\'utilisation.', {'label_attr': {'class': 'form-label'}}) }}
+            
+        </div>
+    
+        <div class="d-grid gap-2 col-6 mx-auto">
+    
+            <input type="submit" value="S'enregistrer" class="btn btn-outline-info">
+    
+        </div>
+
     {{ form_end(registrationForm) }}
 {% endblock %}

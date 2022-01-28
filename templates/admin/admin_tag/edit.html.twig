@@ -1,13 +1,27 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Edit Tags{% endblock %}
+{% block title %}Edition de tag{% endblock %}
 
 {% block body %}
-    <h1>Edit Tags</h1>
+<section class="py-5">
+    <div class="container">
 
-    {{ include('admin/admin_tag/_form.html.twig', {'button_label': 'Update'}) }}
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="text-center">Catégorie n° {{ tag.id }} : {{ tag.name }}</h2>
+                    <hr>
+                <p class="card-text">
+                    {{ include('admin/admin_tag/_form.html.twig', {'button_label': 'Update'}) }}
+                </p>
+                </div>
+            </div>
+            </div>
+        </div>
+    </section>
 
-    <a href="{{ path('admin_tag_index') }}">back to list</a>
+    <div class="text-center">
+        <a href="{{ path('admin_tag_index') }}"><button type="button" class="btn btn-success btn-sm m-2">Retour à la liste des tags</button></a>
 
-    {{ include('admin/admin_tag/_delete_form.html.twig') }}
+        {{ include('admin/admin_tag/_delete_form.html.twig') }}
+    </div>
 {% endblock %}

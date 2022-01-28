@@ -1,11 +1,13 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New Voyage{% endblock %}
+{% block title %}Nouveau voyage{% endblock %}
 
 {% block body %}
-    <h1>Create new Voyage</h1>
+    <h1 class="text-center mb-3">Création d'un nouveau voyage</h1>  
 
     {{ include('admin/admin_voyage/_form.html.twig') }}
 
-    <a href="{{ path('admin_voyage_index') }}">back to list</a>
+    <div class="text-center"> 
+        <a href="{{ path('admin_voyage_index') }}"><button type="button" class="btn btn-outline-info btn-sm m-2">Retour à la liste des voyages</button></a> 
+    </div>
 {% endblock %}

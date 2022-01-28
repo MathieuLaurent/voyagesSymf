@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} {{ voyage.name }} {% endblock %}
+
+{% block body %}
+
+<div class="col-sm-6">
+    <div class="card">
+        <div class="card-body">
+            <img class="card-img-top form-img-card" src="{{asset(voyage.pic1)}}" alt="..." />
+        <h5 class="card-title text-center">{{ voyage.name }}</h5>
+        <hr>
+        <div class="small mb-1 text-center">{{ voyage.duration }} jours • {{ voyage.category.name }} • {{ voyage.price }}€</div>
+        <hr>
+        <p class="card-text"><h6>« {{ voyage.slogan }} »</h6>
+            <p>{{ voyage.description }}</p>
+            <div class="small mb-1 text-center"> {% for tag in voyage.tags %}
+                #  {{ tag.name }}
+            {% endfor %} </div>
+            
+        </div>
+    </div>
+    </div>
+
+{% endblock %}

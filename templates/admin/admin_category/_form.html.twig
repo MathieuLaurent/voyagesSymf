@@ -1,4 +1,25 @@
 {{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
+{% for message in app.flashes('success') %}
+<div class="alert alert-success">
+    {{ message }}
+</div>
+{% endfor %}
+
+{{ form_start(form) }}
+
+<div class="input-group mb-3">
+
+    {{ form_label(form.name, 'Nom', {'label_attr': {'class': 'input-group-text'}}) }}
+    {{ form_widget(form.name, {'attr': {'class': 'form-control'}}) }}
+
+</div>
+
+<div class="input-group mb-3">
+
+    {{ form_label(form.description, 'Description', {'label_attr': {'class': 'input-group-text'}}) }}
+    {{ form_widget(form.description, {'attr': {'class': 'form-control'}}) }}
+    
+</div>
+
+    <button class="btn btn-sm btn-outline-success mt-5 mb-3">{{ button_label|default('Envoyer') }}</button>
 {{ form_end(form) }}

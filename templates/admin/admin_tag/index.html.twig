@@ -1,16 +1,17 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Tags index{% endblock %}
+{% block title %}Liste des tags{% endblock %}
 
 {% block body %}
-    <h1>Tags index</h1>
+    <h1>Liste des tags</h1>
+    <hr>
 
-    <table class="table">
+    <table class="table table-light table-striped table-hover">
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Name</th>
-                <th>actions</th>
+                <th>Nom</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -19,8 +20,10 @@
                 <td>{{ tag.id }}</td>
                 <td>{{ tag.name }}</td>
                 <td>
-                    <a href="{{ path('admin_tag_show', {'id': tag.id}) }}">show</a>
-                    <a href="{{ path('admin_tag_edit', {'id': tag.id}) }}">edit</a>
+                    <div class="text-center">
+                        <a href="{{ path('admin_tag_show', {'id': tag.id}) }}"><button type="button" class="btn btn-outline-info btn-sm m-2">Voir</button></a>
+                        <a href="{{ path('admin_tag_edit', {'id': tag.id}) }}"><button type="button" class="btn btn-outline-success btn-sm m-2">Editer</button></a>
+                    </div>
                 </td>
             </tr>
         {% else %}
@@ -31,5 +34,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('admin_tag_new') }}">Create new</a>
+    <a href="{{ path('admin_tag_new') }}"><button type="button" class="btn btn-success btn-sm m-2">Créer un nouveau tag</button></a>
 {% endblock %}
