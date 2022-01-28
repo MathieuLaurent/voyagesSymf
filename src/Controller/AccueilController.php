@@ -16,7 +16,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class AccueilController extends AbstractController
 {
     #[Route('/', name: 'accueil')]
-    public function index(VoyageRepository $voyages, Request $request): Response
+    public function index(VoyageRepository $voyages, Request $request, TagsRepository $tags): Response
     {
 
         $formTag = $this->createForm(TagsType::class);
@@ -31,7 +31,8 @@ class AccueilController extends AbstractController
 
         return $this->render('pages/accueil.html.twig', [
             'voyages' => $voyages->findAll(),
-            'formTag' => $formTag->createView()
+            'formTag' => $formTag->createView(),
+            'tags'=> $tags->findAll(),
         ]);
     }
 

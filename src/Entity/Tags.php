@@ -21,6 +21,9 @@ class Tags
     #[ORM\ManyToMany(targetEntity: Voyage::class, mappedBy: 'tags')]
     private $voyages;
 
+    #[ORM\Column(type: 'string', length: 255)]
+    private $picture;
+
     public function __construct()
     {
         $this->voyages = new ArrayCollection();
@@ -66,6 +69,18 @@ class Tags
         if ($this->voyages->removeElement($voyage)) {
             $voyage->removeTag($this);
         }
+
+        return $this;
+    }
+
+    public function getPicture(): ?string
+    {
+        return $this->picture;
+    }
+
+    public function setPicture(string $picture): self
+    {
+        $this->picture = $picture;
 
         return $this;
     }
