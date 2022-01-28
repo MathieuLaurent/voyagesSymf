@@ -1,19 +1,20 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-<h1>{{tags}}</h1>
+<h1>{{tag}}</h1>
 <section class="py-5">
         <div class="container px-4 px-lg-5 mt-5">
             <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-                {% for unVoyage in voyages %}
+                {% for tag in tags %}
+                    {% for voyageItem in tag.voyages %}
                     <div class="col mb-5">
                         <div class="card h-100">
-                        {% if unVoyage.pic1 is not null %}
-                        <img class="image-card" src="{{ asset(unVoyage.pic1) }}">
+                        {% if voyageItem.pic1 is not null %}
+                            <img class="image-card" src="{{ asset(voyageItem.pic1) }}">
                         {% endif %}
                             <div class="card-body p-4">
                                 <div class="text-center">
-                                    <h5 class="fw-bolder">{{ unVoyage.name }}</h5>
+                                    <h5 class="fw-bolder">{{ voyageItem.name }}</h5>
                                 </div>
                             </div>
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
@@ -21,6 +22,7 @@
                             </div>
                         </div>
                     </div>
+                    {% endfor %}
                 {% endfor %}
                 </div>
             </div>

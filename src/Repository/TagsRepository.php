@@ -19,22 +19,22 @@ class TagsRepository extends ServiceEntityRepository
         parent::__construct($registry, Tags::class);
     }
 
-    // /**
-    //  * @return Tags[] Returns an array of Tags objects
-    //  */
-    /*
-    public function findByExampleField($value)
+    /**
+      * @return Tags[] Returns an array of Tags objects
+      */
+
+    public function findByNameField($value)
     {
+  //SELECT * FROM `voyage` JOIN `voyage_tags` ON voyage.id = voyage_tags.voyage_id JOIN tags ON voyage_tags.tags_id = tags.id WHERE tags.name LIKE "%Aventure%"; 
         return $this->createQueryBuilder('t')
-            ->andWhere('t.exampleField = :val')
+            ->join('t.voyages', 'v')
+            ->addSelect('v')
+            ->andWhere('t.name LIKE :val')
             ->setParameter('val', $value)
-            ->orderBy('t.id', 'ASC')
-            ->setMaxResults(10)
             ->getQuery()
             ->getResult()
         ;
     }
-    */
 
     /*
     public function findOneBySomeField($value): ?Tags
