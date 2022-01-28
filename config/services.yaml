@@ -4,6 +4,7 @@
 # Put parameters here that don't need to change on each machine where the app is deployed
 # https://symfony.com/doc/current/best_practices.html#use-parameters-for-application-configuration
 parameters:
+    app.ApiAirportKey: '14cabec9f53913c88368a4384e9fa2f1'
 
 services:
     # default configuration for services in *this* file

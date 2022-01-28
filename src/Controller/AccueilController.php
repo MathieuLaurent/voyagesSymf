@@ -18,12 +18,13 @@ class AccueilController extends AbstractController
     #[Route('/', name: 'accueil')]
     public function index(VoyageRepository $voyages, Request $request): Response
     {
+
         $formTag = $this->createForm(TagsType::class);
         $formTag->handleRequest($request);
         if($formTag->isSubmitted() && $formTag->isValid()){
 
             return $this->redirectToRoute('tagSearch', [
-                'tag' => $formTag->getData('name')->getName()
+                'tag' => $formTag->getData('name')->getName(),
             ]);
         }
 
