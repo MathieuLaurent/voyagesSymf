@@ -6,9 +6,9 @@
 
     /*========== Colors ==========*/
 
-    --hover-effect: rgba(66, 165, 188, 0.5);
-    --dark-blue: rgba(34, 89, 140, 1);
-    --alt-blue: rgba(40, 123, 176, 1);
+    --hover-effect: #42a6bd;
+    --dark-blue: #22598c;
+    --alt-blue: #287bb0;
 
     --font-color: rgba(44, 52, 54, 1);
     --light-font: rgba(163, 172, 178,1);

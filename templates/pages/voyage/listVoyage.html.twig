@@ -1,8 +1,12 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello VoyageController!{% endblock %}
+{% block title %}Nos voyages{% endblock %}
 
 {% block body %}
+
+<h1>Nos voyages</h1>
+<h3>« pour voir du paysage »</h3>
+<hr>
 
 <section class="py-5">
         <div class="container px-4 px-lg-5 mt-5">
@@ -21,10 +25,32 @@
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                                 <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Voir la liste des voyages</a></div>
                             </div>
+
+                        <div class="card">
+                            {% if unVoyage.pic1 is not null %}
+                        <img class= "image-card" src="{{asset(unVoyage.pic1)}}">
+                        {% endif %}
+
+                        <div class="card-header">
+                            <h5 class="fw-bolder text-center">{{ unVoyage.name }}</h5>
+                            <h6 class="fw-light text-center">« {{ unVoyage.slogan }} »</h6>
+>>>>>>> d11e537c4081252c6c892dcdac68420132fb42d4
                         </div>
-                    </div>
-                {% endfor %}
+
+                                <ul class="list-group list-group-flush">
+                                     <li class="list-group-item">
+                                        <div class="small mb-1 text-center"> {% for tag in unVoyage.tags %}
+                                            #  {{ tag.name }}
+                                            {% endfor %}
+                                        </div>
+                                    </li>
+
+                                <div class="card-footer">
+                                    <div class="text-center"><a class="btn btn-outline-info btn-sm" href="#">+ en détail</a></div>
+                                </div>
+                    </div> 
                 </div>
+                {% endfor %}
             </div>
         </section>
 

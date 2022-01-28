@@ -28,31 +28,37 @@
 </div>{#}
 
 <section class="py-5">
-        <div class="container px-4 px-lg-5 mt-5">
-            <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-                {% for voyageItem in voyages %}
-                    <div class="col mb-5">
-                        <div class="card h-100">
-                        {% if voyageItem.pic1 is not null %}
-                            <img class="card-img-top image-card" src="{{asset(voyageItem.pic1)}}" alt="..." />
-                        {% endif %}
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <h5 class="fw-bolder">{{ voyageItem.name }}</h5>
-                                    <div class="d-flex justify-content-center small text-warning mb-2">
-                                    </div>
-                                    {{ voyageItem.price }}€
-                                </div>
-                            </div>
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Voir le détail</a></div>
-                            </div>
-                        </div>
+    <div class="container px-4 px-lg-5 mt-5">
+        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+            {% for unVoyage in voyages %}
+                <div class="col mb-5">
+
+                    <div class="card">
+                        {% if unVoyage.pic1 is not null %}
+                    <img class= "image-card" src="{{asset(unVoyage.pic1)}}">
+                    {% endif %}
+
+                    <div class="card-header">
+                        <h5 class="fw-bolder text-center">{{ unVoyage.name }}</h5>
+                        <h6 class="fw-light text-center">« {{ unVoyage.slogan }} »</h6>
                     </div>
-                {% endfor %}
-                </div>
+
+                            <ul class="list-group list-group-flush">
+                                 <li class="list-group-item">
+                                    <div class="small mb-1 text-center"> {% for tag in unVoyage.tags %}
+                                        #  {{ tag.name }}
+                                        {% endfor %}
+                                    </div>
+                                </li>
+
+                            <div class="card-footer">
+                                <div class="text-center"><a class="btn btn-outline-info btn-sm" href="#">+ en détail</a></div>
+                            </div>
+                </div> 
             </div>
-        </section>
+            {% endfor %}
+        </div>
+    </section>
 
 
 {% endblock %}
