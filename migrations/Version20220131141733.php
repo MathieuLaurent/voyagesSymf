@@ -10,7 +10,7 @@ use Doctrine\Migrations\AbstractMigration;
 /**
  * Auto-generated Migration: Please modify to your needs!
  */
-final class Version20220128124854 extends AbstractMigration
+final class Version20220131141733 extends AbstractMigration
 {
     public function getDescription(): string
     {
@@ -20,16 +20,12 @@ final class Version20220128124854 extends AbstractMigration
     public function up(Schema $schema): void
     {
         // this up() migration is auto-generated, please modify it to your needs
-        $this->addSql('ALTER TABLE tags ADD picture VARCHAR(255) NOT NULL');
-        $this->addSql('ALTER TABLE voyage ADD CONSTRAINT FK_3F9D895512469DE2 FOREIGN KEY (category_id) REFERENCES category (id)');
-        $this->addSql('CREATE INDEX IDX_3F9D895512469DE2 ON voyage (category_id)');
+        $this->addSql('ALTER TABLE user ADD picture VARCHAR(255) DEFAULT NULL');
     }
 
     public function down(Schema $schema): void
     {
         // this down() migration is auto-generated, please modify it to your needs
-        $this->addSql('ALTER TABLE tags DROP picture');
-        $this->addSql('ALTER TABLE voyage DROP FOREIGN KEY FK_3F9D895512469DE2');
-        $this->addSql('DROP INDEX IDX_3F9D895512469DE2 ON voyage');
+        $this->addSql('ALTER TABLE user DROP picture');
     }
 }
