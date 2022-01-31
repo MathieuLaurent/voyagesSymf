@@ -13,6 +13,8 @@ class TagsType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
+            ->setMethod('GET')
+            ->setAction('tagSearch/')
             ->add('name', SearchType::class, [
                 'attr' => [
                 'placeholder' => 'Rechercher..',
