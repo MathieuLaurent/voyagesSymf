@@ -9,37 +9,36 @@
 <hr>
 
 <section class="py-5">
-        <div class="container px-4 px-lg-5 mt-5">
-            <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-                {% for unVoyage in voyages %}
-                    <div class="col mb-5">
-                        <div class="card h-100">
+    <div class="container px-4 px-lg-5 mt-5">
+        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+            {% for unVoyage in voyages %}
+                <div class="col mb-5">
 
-                        <div class="card">
-                            {% if unVoyage.pic1 is not null %}
-                        <img class= "image-card" src="{{asset(unVoyage.pic1)}}">
-                        {% endif %}
+                    <div class="card">
+                        {% if unVoyage.pic1 is not null %}
+                    <img class= "image-card" src="{{asset(unVoyage.pic1)}}">
+                    {% endif %}
 
-                        <div class="card-header">
-                            <h5 class="fw-bolder text-center">{{ unVoyage.name }}</h5>
-                            <h6 class="fw-light text-center">« {{ unVoyage.slogan }} »</h6>
-                        </div>
+                    <div class="card-header">
+                        <h5 class="fw-bolder text-center">{{ unVoyage.name }}</h5>
+                        <h6 class="fw-light text-center">« {{ unVoyage.slogan }} »</h6>
+                    </div>
 
-                                <ul class="list-group list-group-flush">
-                                     <li class="list-group-item">
-                                        <div class="small mb-1 text-center"> {% for tag in unVoyage.tags %}
-                                            #  {{ tag.name }}
-                                            {% endfor %}
-                                        </div>
-                                    </li>
+                            <ul class="list-group list-group-flush">
+                                 <li class="list-group-item">
+                                    <div class="small mb-1 text-center"> {% for tag in unVoyage.tags %}
+                                        #  {{ tag.name }}
+                                        {% endfor %}
+                                    </div>
+                                </li>
 
-                                <div class="card-footer">
-                                    <div class="text-center"><a class="btn btn-outline-info btn-sm" href="#">+ en détail</a></div>
-                                </div>
-                    </div> 
-                </div>
-                {% endfor %}
+                            <div class="card-footer">
+                                <div class="text-center"><a class="btn btn-outline-info btn-sm" href="#">+ en détail</a></div>
+                            </div>
+                </div> 
             </div>
-        </section>
+            {% endfor %}
+        </div>
+    </section>
 
 {% endblock %}
