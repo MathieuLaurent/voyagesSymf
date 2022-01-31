@@ -19,19 +19,8 @@ class AccueilController extends AbstractController
     public function index(VoyageRepository $voyages, Request $request, TagsRepository $tags): Response
     {
 
-        $formTag = $this->createForm(TagsType::class);
-        $formTag->handleRequest($request);
-        if($formTag->isSubmitted() && $formTag->isValid()){
-
-            return $this->redirectToRoute('tagSearch', [
-                'tag' => $formTag->getData('name')->getName(),
-            ]);
-        }
-
-
         return $this->render('pages/accueil.html.twig', [
             'voyages' => $voyages->findAll(),
-            'formTag' => $formTag->createView(),
             'tags'=> $tags->findAll(),
         ]);
     }
@@ -39,12 +28,9 @@ class AccueilController extends AbstractController
     #[Route('/tagSearch/{tag}', name: 'tagSearch')]
     public function tagSearch(string $tag, Request $request, TagsRepository $tags) :Response
     {
-        $formTag = $this->createForm(TagsType::class);
-        $formTag->handleRequest($request);
-
+        
 
         return $this->render('pages/tag/tagSearch.html.twig', [
-            'formTag' => $formTag->createView(),
             'tag' => $tag,
             'tags' => $tags->findByNameField($tag),
         ]);

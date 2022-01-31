@@ -14,17 +14,9 @@ class SecurityController extends AbstractController
     /**
      * @Route("/login", name="app_login")
      */
-    public function login(AuthenticationUtils $authenticationUtils, Request $request): Response
+    public function login(AuthenticationUtils $authenticationUtils): Response
     {
-        $formTag = $this->createForm(TagsType::class);
-        $formTag->handleRequest($request);
-
-        if($formTag->isSubmitted() && $formTag->isValid()){
-
-            return $this->redirectToRoute('tagSearch', [
-                'tag' => $formTag->getData('name')->getName()
-            ]);
-        }
+       
         // if ($this->getUser()) {
         //     return $this->redirectToRoute('target_path');
         // }
@@ -37,7 +29,6 @@ class SecurityController extends AbstractController
         return $this->render('security/login.html.twig', [
             'last_username' => $lastUsername,
              'error' => $error,
-             'formTag' => $formTag->createView()
             ]);
     }
 

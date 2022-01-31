@@ -15,8 +15,7 @@
 </head>
 
 <body>  
-       {{ include('inc/header.html.twig') }}
- 
+    {{render(controller('App\\Controller\\MenuTagSearchController::renderTagSearch'))}}
     
     <main class="py-my-5">
         <div class="container px-4 px-lg-5 my-5">
